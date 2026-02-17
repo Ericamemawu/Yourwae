@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Yourwae · Ghana marketplace with real images</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -20,7 +20,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 1.5rem 1rem;
+            padding: 1rem 0.5rem;
+            min-height: 100vh;
         }
 
         /* main marketplace card */
@@ -28,8 +29,8 @@
             max-width: 1440px;
             width: 100%;
             background: white;
-            border-radius: 40px;
-            box-shadow: 0 30px 60px -20px rgba(0, 30, 60, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 15px 30px -10px rgba(0, 30, 60, 0.2);
             overflow: hidden;
             transition: all 0.2s;
         }
@@ -37,47 +38,74 @@
         /* brand stripe */
         .brand-stripe {
             background: #0b2b40;
-            padding: 0.9rem 2.2rem;
+            padding: 0.7rem 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             color: white;
+            gap: 10px;
         }
+        
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
+        
         .brand-icon {
             background: #fcb42e;
-            width: 44px;
-            height: 44px;
-            border-radius: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: #0b2b40;
         }
+        
         .brand-name {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
+        
         .brand-name span {
             color: #fcb42e;
             font-weight: 300;
         }
+        
         .tag {
             background: #1f4b6e;
-            padding: 0.4rem 1.2rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 40px;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
+            gap: 4px;
+        }
+
+        /* seller toggle for mobile */
+        .seller-panel-toggle {
+            background: #fce9d0;
+            border: 2px solid #fcb42e;
+            color: #0b2b40;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
             gap: 6px;
+            font-size: 0.85rem;
+            transition: 0.15s;
+            white-space: nowrap;
+        }
+        
+        .seller-panel-toggle:hover {
+            background: #fcb42e;
         }
 
         /* main header */
@@ -86,208 +114,253 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            padding: 1.3rem 2.2rem;
+            padding: 1rem;
             background: white;
             border-bottom: 1px solid #e7eef6;
+            gap: 12px;
         }
+        
         .logo-mini {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
+        
         .logo-mini i {
             background: #fcb42e;
-            padding: 10px;
-            border-radius: 14px;
+            padding: 8px;
+            border-radius: 12px;
             color: #0b2b40;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
+        
         .logo-mini span {
             font-weight: 700;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             color: #1d3a53;
         }
 
         .search-area {
-            flex: 1 1 400px;
-            margin: 0 2rem;
+            flex: 1 1 300px;
+            margin: 0;
+            min-width: 200px;
         }
+        
         .search-box {
             display: flex;
             background: #f4f8ff;
-            border-radius: 60px;
+            border-radius: 50px;
             border: 1px solid #d9e4f0;
             overflow: hidden;
+            height: 44px;
         }
+        
         .search-box input {
             flex: 1;
             border: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
+            padding: 0.6rem 1rem;
+            font-size: 0.95rem;
             background: transparent;
             outline: none;
+            min-width: 120px;
         }
+        
         .search-box button {
             background: #fcb42e;
             border: none;
             color: #0b2b40;
             font-weight: 600;
-            padding: 0 2rem;
+            padding: 0 1.2rem;
             cursor: pointer;
             transition: 0.2s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
+        
         .search-box button:hover {
             background: #e09f1f;
         }
 
         .user-actions {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             color: #2e4c6b;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             align-items: center;
         }
+        
         .cart-icon {
             position: relative;
             cursor: pointer;
         }
+        
         .cart-count {
             position: absolute;
-            top: -10px;
-            right: -10px;
+            top: -8px;
+            right: -8px;
             background: #fcb42e;
             color: #0b2b40;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
-            padding: 0.2rem 0.5rem;
+            padding: 0.2rem 0.4rem;
             border-radius: 20px;
-            min-width: 20px;
+            min-width: 18px;
             text-align: center;
         }
 
-        /* seller dashboard toggle */
-        .seller-panel-toggle {
-            background: #fce9d0;
-            border: 2px solid #fcb42e;
-            color: #0b2b40;
-            font-weight: 700;
-            padding: 0.5rem 1.5rem;
-            border-radius: 60px;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.15s;
-        }
-        .seller-panel-toggle:hover {
-            background: #fcb42e;
-        }
-
-        /* category pills */
+        /* category pills - horizontal scroll on mobile */
         .category-row {
             background: white;
-            padding: 0.8rem 2.2rem;
+            padding: 0.8rem 1rem;
             border-bottom: 1px solid #e7eef6;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.3rem 1.8rem;
+            flex-wrap: nowrap;
+            gap: 0.8rem;
             align-items: center;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            white-space: nowrap;
         }
+        
+        .category-row::-webkit-scrollbar {
+            display: none;
+        }
+        
         .cat-pill {
-            padding: 0.5rem 0.2rem;
+            padding: 0.4rem 0;
             font-weight: 550;
             color: #1f405d;
             border-bottom: 3px solid transparent;
             cursor: pointer;
             transition: 0.1s;
+            font-size: 0.9rem;
+            flex-shrink: 0;
         }
+        
         .cat-pill.active {
             color: #fcb42e;
             border-bottom-color: #fcb42e;
             font-weight: 700;
         }
+        
         .cat-pill i {
-            margin-right: 6px;
+            margin-right: 4px;
             color: #7a9bc7;
         }
 
-        /* filter bar */
+        /* filter bar - stacked on mobile */
         .filter-tools {
             background: #f8fbfe;
-            margin: 1.5rem 2.2rem 1.8rem;
-            padding: 1rem 2rem;
-            border-radius: 60px;
+            margin: 1rem 1rem;
+            padding: 1rem;
+            border-radius: 30px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
             border: 1px solid #dae5f2;
         }
+        
         .stock-filter {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             font-weight: 500;
             color: #173e5c;
+            font-size: 0.95rem;
         }
+        
         .stock-filter input {
-            width: 1.2rem;
-            height: 1.2rem;
+            width: 1.1rem;
+            height: 1.1rem;
             accent-color: #fcb42e;
         }
+        
         .sort-group {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
             flex-wrap: wrap;
+            flex: 1;
         }
+        
+        .sort-group label {
+            font-weight: 500;
+            color: #1f405d;
+            font-size: 0.95rem;
+        }
+        
         .sort-group select {
             background: white;
             border: 1px solid #c2d4e8;
-            padding: 0.5rem 2.5rem 0.5rem 1.4rem;
+            padding: 0.5rem 2rem 0.5rem 1rem;
             border-radius: 50px;
             font-weight: 500;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L2 6h12z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L2 6h12z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 1rem center;
+            background-position: right 0.8rem center;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 140px;
         }
+        
         .reset-all {
-            margin-left: auto;
+            margin-left: 0;
             background: none;
             border: none;
             color: #fcb42e;
             font-weight: 700;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #dae5f2;
         }
 
-        /* product grid */
+        /* product grid - responsive */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 2rem 1.5rem;
-            padding: 0 2.2rem;
-            margin: 1.5rem 0 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1rem;
+            padding: 0 1rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        /* For very small phones */
+        @media (max-width: 380px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.8rem;
+                padding: 0 0.8rem;
+            }
         }
 
         .product-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 18px;
             border: 1px solid #e2ecf9;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
+        
+        .product-card:active {
+            transform: scale(0.98);
+            background: #f8fafd;
+        }
+        
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -8px rgba(252,180,46,0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -6px rgba(252,180,46,0.2);
             border-color: #fcb42e;
         }
 
@@ -300,133 +373,153 @@
             position: relative;
             overflow: hidden;
         }
+        
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.3s ease;
         }
+        
         .product-card:hover .product-image img {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
+        
         .discount-tag {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 8px;
+            left: 8px;
             background: #fcb42e;
             color: #0b2b40;
             font-weight: 800;
-            font-size: 0.8rem;
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
             z-index: 2;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .product-details {
-            padding: 1.2rem 1rem 1.2rem;
+            padding: 0.8rem 0.7rem 1rem;
         }
+        
         .prod-category {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             color: #b45f1a;
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.3px;
         }
+        
         .prod-title {
-            font-weight: 650;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             color: #142c41;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            line-height: 1.4;
+            line-height: 1.3;
         }
+        
         .price-block {
             display: flex;
             align-items: baseline;
-            gap: 0.6rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
-            margin: 0.3rem 0;
+            margin: 0.2rem 0;
         }
+        
         .current-price {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #1d3a53;
         }
+        
         .current-price:before {
             content: 'GH₵';
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             font-weight: 500;
-            margin-right: 3px;
+            margin-right: 2px;
         }
+        
         .old-price {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: #7b95b5;
             text-decoration: line-through;
         }
+        
         .old-price:before {
             content: 'GH₵';
-            font-size: 0.7rem;
-            margin-right: 2px;
+            font-size: 0.6rem;
+            margin-right: 1px;
         }
+        
         .discount-badge {
             background: #fef0dd;
             color: #b45f1a;
             font-weight: 700;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
         }
 
         .stock-rating {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 0.8rem 0 0.5rem;
+            margin: 0.5rem 0 0.3rem;
+            gap: 4px;
         }
+        
         .stock {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 600;
             background: #e2f0e8;
             color: #1f7044;
-            padding: 0.25rem 1rem;
-            border-radius: 40px;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            white-space: nowrap;
         }
+        
         .stock.out {
             background: #fee2d6;
             color: #b3420c;
         }
+        
         .rating {
             color: #fcb42e;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 2px;
+            white-space: nowrap;
         }
+        
         .add-to-cart-btn {
             width: 100%;
-            margin-top: 0.8rem;
+            margin-top: 0.6rem;
             background: #fcb42e;
             border: none;
             color: #0b2b40;
             font-weight: 600;
-            padding: 0.7rem;
+            padding: 0.6rem;
             border-radius: 40px;
             cursor: pointer;
             transition: 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            font-size: 0.9rem;
+            gap: 6px;
+            font-size: 0.8rem;
         }
+        
         .add-to-cart-btn:hover {
             background: #e09f1f;
         }
+        
         .add-to-cart-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
@@ -437,258 +530,351 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.5rem 2.2rem 0.8rem;
+            padding: 1rem 1rem 0.8rem;
             border-top: 1px dashed #c9daea;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             color: #3e6083;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        /* modal */
+        /* modal - mobile optimized */
         .modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(8, 30, 45, 0.8);
-            backdrop-filter: blur(8px);
+            background: rgba(8, 30, 45, 0.9);
+            backdrop-filter: blur(4px);
             align-items: center;
             justify-content: center;
-            z-index: 1000;
+            z-index: 2000;
+            padding: 10px;
         }
+        
         .modal-card {
             background: white;
-            max-width: 900px;
-            width: 95%;
+            max-width: 500px;
+            width: 100%;
             max-height: 85vh;
             overflow-y: auto;
-            border-radius: 44px;
-            padding: 2.5rem;
-            box-shadow: 0 50px 70px rgba(0,0,0,0.5);
+            border-radius: 30px;
+            padding: 1.5rem;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.5);
             position: relative;
         }
+        
         .modal-close {
             position: sticky;
             top: 0;
             float: right;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #a0b8d0;
             cursor: pointer;
             transition: 0.2s;
+            z-index: 10;
+            background: white;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
+        
         .modal-close:hover {
             color: #fcb42e;
+            background: #f0f4fa;
         }
+        
         .modal-flex {
             display: flex;
-            gap: 2.5rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
+        
         .modal-img {
-            width: 280px;
-            height: 280px;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            aspect-ratio: 1/1;
             background: #dbe6f2;
-            border-radius: 32px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin: 0 auto;
         }
+        
         .modal-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        
         .modal-info {
             flex: 1;
+            min-width: 200px;
         }
+        
         .modal-info h2 {
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #0b2b40;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
+        
         .modal-price {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #0b2b40;
             margin: 0.5rem 0;
         }
+        
         .modal-price:before {
             content: 'GH₵';
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-weight: 500;
-            margin-right: 5px;
+            margin-right: 3px;
         }
 
-        /* cart modal specific */
+        /* cart modal mobile */
         .cart-modal .modal-card {
-            max-width: 550px;
+            max-width: 450px;
+            padding: 1.2rem;
         }
+        
         .cart-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem 0;
+            gap: 0.8rem;
+            padding: 0.8rem 0;
             border-bottom: 1px solid #e7eef6;
         }
+        
         .cart-item-img {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             background: #edf3fc;
-            border-radius: 16px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            flex-shrink: 0;
         }
+        
         .cart-item-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        
         .cart-item-details {
             flex: 1;
+            min-width: 0;
         }
+        
         .cart-item-title {
             font-weight: 600;
             color: #142c41;
             margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
+        
         .cart-item-price {
             color: #fcb42e;
             font-weight: 700;
+            font-size: 0.85rem;
         }
+        
         .cart-item-actions {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
+            flex-shrink: 0;
         }
+        
         .cart-item-actions button {
             background: none;
             border: 1px solid #d9e4f0;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 8px;
             cursor: pointer;
             transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        
         .cart-item-actions button:hover {
             background: #fcb42e;
             border-color: #fcb42e;
         }
+        
         .cart-total {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             text-align: right;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #0b2b40;
         }
+        
         .checkout-btn {
             width: 100%;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
             background: #fcb42e;
             border: none;
             color: #0b2b40;
             font-weight: 700;
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 60px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: 0.2s;
         }
-        .checkout-btn:hover {
-            background: #e09f1f;
-        }
 
-        /* review section */
-        .review-section {
-            border-top: 2px solid #ecf3fa;
-            padding-top: 1.8rem;
-        }
-        .review-list {
-            max-height: 200px;
-            overflow-y: auto;
-            background: #f9fcff;
-            border-radius: 24px;
-            padding: 1rem 1.5rem;
-            margin: 1rem 0 1.5rem;
-        }
-        .single-review {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #e0ecf9;
-        }
-        .review-author {
-            font-weight: 700;
-            color: #163a57;
-        }
-        .review-text {
-            color: #2b4b6e;
-        }
-        .review-date {
-            font-size: 0.7rem;
-            color: #809bb8;
-        }
-
-        /* seller dashboard */
+        /* seller dashboard mobile */
         .seller-dash {
             background: #fafdff;
-            margin: 0 2.2rem 2rem;
-            border-radius: 40px;
-            padding: 2rem;
+            margin: 0 1rem 1.5rem;
+            border-radius: 30px;
+            padding: 1.5rem;
             border: 2px solid #fcb42e;
             display: none;
         }
+        
         .seller-dash.visible {
             display: block;
         }
+        
+        .seller-dash h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
         .form-row {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
             margin-bottom: 1rem;
         }
+        
         .form-row label {
-            min-width: 130px;
+            min-width: 100px;
             font-weight: 600;
             color: #1d405d;
+            font-size: 0.9rem;
         }
+        
         .form-row input, .form-row select {
             flex: 1;
-            padding: 0.8rem 1.2rem;
-            border-radius: 60px;
+            padding: 0.7rem 1rem;
+            border-radius: 50px;
             border: 1px solid #cbdaea;
+            font-size: 0.9rem;
+            min-width: 150px;
         }
+        
         .preview-box {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: #eef3fc;
-            border-radius: 16px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
         }
-        .preview-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        
         .btn-gold {
             background: #fcb42e;
             border: none;
             color: #0b2b40;
             font-weight: 700;
-            padding: 0.9rem 2.2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 60px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             margin-top: 0.5rem;
             transition: 0.2s;
+            width: 100%;
         }
-        .btn-gold:hover {
-            background: #e09f1f;
+
+        /* review section mobile */
+        .review-section {
+            border-top: 2px solid #ecf3fa;
+            padding-top: 1.2rem;
+        }
+        
+        .review-list {
+            max-height: 180px;
+            overflow-y: auto;
+            background: #f9fcff;
+            border-radius: 20px;
+            padding: 0.8rem 1rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        
+        .single-review {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0ecf9;
+            font-size: 0.9rem;
+        }
+
+        /* tablet adjustments */
+        @media (min-width: 768px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .brand-stripe {
+                padding: 0.9rem 2rem;
+            }
+            
+            .main-header {
+                padding: 1.3rem 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+                padding: 0 2rem;
+            }
+            
+            .filter-tools {
+                margin: 1.5rem 2rem;
+                padding: 1rem 2rem;
+            }
+            
+            .reset-all {
+                width: auto;
+                border-top: none;
+                margin-left: auto;
+            }
+            
+            .btn-gold {
+                width: auto;
+            }
+            
+            .modal-img {
+                max-width: 250px;
+            }
+        }
+
+        /* desktop */
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
         }
     </style>
 </head>
@@ -700,9 +886,9 @@
             <div class="brand-icon"><i class="fas fa-bag-shopping"></i></div>
             <div class="brand-name">Your<span>wae</span></div>
         </div>
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <div class="tag"><i class="fas fa-truck"></i> Ghana • affordable GH₵</div>
-            <div class="seller-panel-toggle" id="sellerToggle"><i class="fas fa-store"></i> Seller</div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <div class="tag"><i class="fas fa-truck"></i> <span class="hide-mobile">Ghana • </span>affordable</div>
+            <div class="seller-panel-toggle" id="sellerToggle"><i class="fas fa-store"></i> <span class="hide-mobile">Seller</span></div>
         </div>
     </div>
 
@@ -714,8 +900,8 @@
         </div>
         <div class="search-area">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search for affordable goods...">
-                <button id="searchBtn"><i class="fas fa-search"></i> Find</button>
+                <input type="text" id="searchInput" placeholder="Search goods...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
             </div>
         </div>
         <div class="user-actions">
@@ -730,7 +916,7 @@
 
     <!-- seller dashboard (collapsible) -->
     <div class="seller-dash" id="sellerDashboard">
-        <h2 style="margin-bottom:1.5rem; color:#0b2b40;"><i class="fas fa-store-alt"></i> Add new product (store owner)</h2>
+        <h2 style="color:#0b2b40;"><i class="fas fa-store-alt"></i> Add new product</h2>
         <div class="form-row">
             <label>Product name</label>
             <input type="text" id="prodName" placeholder="e.g. Affordable sandals">
@@ -754,7 +940,7 @@
             <input type="number" id="prodPrice" step="0.01" placeholder="e.g. 25.00">
         </div>
         <div class="form-row">
-            <label>Original price (optional)</label>
+            <label>Original price</label>
             <input type="number" id="prodOldPrice" step="0.01" placeholder="e.g. 45.00">
         </div>
         <div class="form-row">
@@ -768,14 +954,14 @@
         <div class="form-row">
             <label>Preview</label>
             <div class="preview-box" id="imagePreview">
-                <i class="fas fa-image" style="font-size:2rem; color:#9db4d0;"></i>
+                <i class="fas fa-image" style="font-size:1.5rem; color:#9db4d0;"></i>
             </div>
         </div>
         <button class="btn-gold" id="addProductBtn"><i class="fas fa-plus-circle"></i> Add to marketplace</button>
-        <div id="sellerNote" style="margin-top:1rem; color:#b45f1a;"></div>
+        <div id="sellerNote" style="margin-top:0.8rem; color:#b45f1a; font-size:0.9rem;"></div>
     </div>
 
-    <!-- categories -->
+    <!-- categories - horizontal scroll on mobile -->
     <div class="category-row" id="categoryRow">
         <div class="cat-pill active" data-category="all"><i class="fas fa-grid-2"></i> All</div>
         <div class="cat-pill" data-category="electronics"><i class="fas fa-microchip"></i> Electronics</div>
@@ -792,14 +978,14 @@
     <!-- filter bar -->
     <div class="filter-tools">
         <label class="stock-filter">
-            <input type="checkbox" id="stockCheck"> <i class="fas fa-boxes"></i> In stock only
+            <input type="checkbox" id="stockCheck"> <i class="fas fa-boxes"></i> In stock
         </label>
         <div class="sort-group">
-            <label><i class="fas fa-arrow-up-wide-short"></i> Sort:</label>
+            <label>Sort:</label>
             <select id="sortSelect">
                 <option value="default">Popular</option>
-                <option value="priceAsc">Price — low to high</option>
-                <option value="priceDesc">Price — high to low</option>
+                <option value="priceAsc">Price: Low to High</option>
+                <option value="priceDesc">Price: High to Low</option>
                 <option value="discount">Biggest discount</option>
                 <option value="rating">Top rated</option>
             </select>
@@ -813,7 +999,7 @@
     <!-- footer summary -->
     <div class="footer-summary">
         <span><i class="fas fa-star" style="color: #fcb42e;"></i> <span id="avgRating">0.0</span> avg · <span id="itemCount">0</span> items</span>
-        <span><i class="fas fa-tag"></i> unbeatable Ghana prices</span>
+        <span><i class="fas fa-tag"></i> Ghana prices</span>
     </div>
 </div>
 
@@ -829,16 +1015,16 @@
 <div id="cartModalOverlay" class="modal-overlay cart-modal">
     <div class="modal-card">
         <i class="fas fa-times modal-close" id="closeCartModal"></i>
-        <h2 style="margin-bottom:1.5rem; color:#0b2b40;"><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+        <h2 style="margin-bottom:1rem; color:#0b2b40; font-size:1.3rem;"><i class="fas fa-shopping-cart"></i> Your Cart</h2>
         <div id="cartItems"></div>
         <div id="cartTotal" class="cart-total"></div>
-        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
     </div>
 </div>
 
 <script>
 (function() {
-    // ---------- PRODUCTS WITH REAL IMAGES (high-quality, attractive) ----------
+    // ---------- PRODUCTS WITH REAL IMAGES ----------
     let products = [
         // Electronics
         { id:1, name:'Wireless Headphones', category:'electronics', price:14.99, originalPrice:29.99, stock:34, rating:4.5, reviewsCount:210, image:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80', color:'#c0d4f0', imageFile: null },
@@ -915,7 +1101,7 @@
             });
         }
         saveCart();
-        showNotification('✅ Product added to cart!');
+        alert('✅ Added to cart!');
     }
 
     function removeFromCart(productId) {
@@ -943,11 +1129,6 @@
             alert('Cannot add more than available stock!');
         }
         renderCartModal();
-    }
-
-    function showNotification(message) {
-        // Simple alert - you could enhance this with a toast notification
-        alert(message);
     }
 
     // ---------- REVIEW STORAGE ----------
@@ -1036,7 +1217,7 @@
 
         const sorted = sortProducts(filtered);
         if (sorted.length === 0) {
-            grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:4rem; color:#809bb8;"><i class="fas fa-box-open fa-4x"></i><br/><br/>No items match</div>`;
+            grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#809bb8;"><i class="fas fa-box-open fa-3x"></i><br/><br/>No items match</div>`;
             return;
         }
 
@@ -1044,7 +1225,6 @@
         sorted.forEach(p => {
             const inStock = p.stock > 0;
             const disc = p.originalPrice ? Math.round(((p.originalPrice - p.price)/p.originalPrice)*100) : 0;
-            // Use real image URL
             const imageHtml = `<img src="${p.image}" alt="${p.name}" loading="lazy">`;
             html += `<div class="product-card" data-id="${p.id}">
                 <div class="product-image" style="background:${p.color}40">
@@ -1061,17 +1241,16 @@
                     </div>
                     <div class="stock-rating">
                         <span class="stock ${inStock?'':'out'}">${inStock?p.stock+' avail':'out'}</span>
-                        <span class="rating"><i class="fas fa-star"></i> ${p.rating} (${p.reviewsCount})</span>
+                        <span class="rating"><i class="fas fa-star"></i> ${p.rating}</span>
                     </div>
                     <button class="add-to-cart-btn" data-id="${p.id}" ${!inStock ? 'disabled' : ''}>
-                        <i class="fas fa-cart-plus"></i> Add to Cart
+                        <i class="fas fa-cart-plus"></i> Add
                     </button>
                 </div>
             </div>`;
         });
         grid.innerHTML = html;
 
-        // Add event listeners to Add to Cart buttons
         document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1083,7 +1262,7 @@
 
     function renderCartModal() {
         if (cart.length === 0) {
-            cartItems.innerHTML = '<p style="text-align:center; color:#809bb8; padding:2rem;">Your cart is empty</p>';
+            cartItems.innerHTML = '<p style="text-align:center; color:#809bb8; padding:1rem;">Your cart is empty</p>';
             cartTotal.innerHTML = '';
             return;
         }
@@ -1156,7 +1335,6 @@
         }
     });
 
-    // Make cart functions globally available
     window.updateQuantity = updateQuantity;
     window.removeFromCart = removeFromCart;
 
@@ -1170,7 +1348,7 @@
             const reader = new FileReader();
             reader.onload = (ev)=> imagePreview.innerHTML = `<img src="${ev.target.result}" alt="preview">`;
             reader.readAsDataURL(file);
-        } else imagePreview.innerHTML = '<i class="fas fa-image" style="font-size:2rem; color:#9db4d0;"></i>';
+        } else imagePreview.innerHTML = '<i class="fas fa-image" style="font-size:1.5rem; color:#9db4d0;"></i>';
     });
 
     // Add product
@@ -1192,26 +1370,25 @@
                     price: price/12,
                     originalPrice: oldP ? oldP/12 : null,
                     stock, rating:0, reviewsCount:0,
-                    image: ev.target.result, // store uploaded image
+                    image: ev.target.result,
                     color: '#c9d6e8', 
                     imageFile: null
                 };
                 products.push(newProd); render();
                 sellerNote.innerText = `✅ "${name}" added!`;
                 prodName.value=''; prodPrice.value=''; prodOldPrice.value=''; prodStock.value='15'; prodImage.value='';
-                imagePreview.innerHTML = '<i class="fas fa-image" style="font-size:2rem; color:#9db4d0;"></i>';
+                imagePreview.innerHTML = '<i class="fas fa-image" style="font-size:1.5rem; color:#9db4d0;"></i>';
                 setTimeout(()=> sellerNote.innerText='', 3000);
             };
             reader.readAsDataURL(imgFile);
         } else {
-            // Use a default product image if no image uploaded
             products.push({ 
                 id:nextId++, 
                 name, category:cat, 
                 price: price/12, 
                 originalPrice: oldP?oldP/12:null, 
                 stock, rating:0, reviewsCount:0, 
-                image: 'https://images.unsplash.com/photo-1584101878539-8b3e8a0e5d5b?w=400&q=80', // default image
+                image: 'https://images.unsplash.com/photo-1584101878539-8b3e8a0e5d5b?w=400&q=80',
                 color:'#c9d6e8', 
                 imageFile:null 
             });
@@ -1227,8 +1404,8 @@
         if(!p) return;
         const disc = p.originalPrice ? Math.round(((p.originalPrice-p.price)/p.originalPrice)*100) : 0;
         const prodReviews = reviews[p.id] || [];
-        let revHtml = prodReviews.length===0 ? '<p style="color:#809bb8;">No reviews yet. Be the first!</p>' : prodReviews.map(r=>
-            `<div class="single-review"><span class="review-author">${r.author}</span> <span style="color:#fcb42e; margin-left:8px;"><i class="fas fa-star"></i> ${r.rating}</span><div class="review-text">${r.text}</div><div class="review-date">${r.date}</div></div>`
+        let revHtml = prodReviews.length===0 ? '<p style="color:#809bb8;">No reviews yet</p>' : prodReviews.map(r=>
+            `<div class="single-review"><span class="review-author">${r.author}</span> <span style="color:#fcb42e;"><i class="fas fa-star"></i> ${r.rating}</span><div class="review-text">${r.text}</div><div class="review-date">${r.date}</div></div>`
         ).join('');
         
         modalContent.innerHTML = `
@@ -1238,34 +1415,30 @@
                 </div>
                 <div class="modal-info">
                     <h2>${p.name}</h2>
-                    <div style="color:#fcb42e; font-weight:600; margin-bottom:0.5rem;">${p.category}</div>
-                    <div class="modal-price">${toCedi(p.price)} ${p.originalPrice?`<span style="font-size:1.2rem; color:#7b95b5; margin-left:10px;"><strike>GH₵${toCedi(p.originalPrice)}</strike> -${disc}%</span>`:''}</div>
-                    <div style="margin:1rem 0;"><i class="fas fa-cubes"></i> Stock: <strong>${p.stock}</strong> ${p.stock>0 ? 'available' : 'out of stock'}</div>
-                    <div style="margin-bottom:1rem;"><i class="fas fa-star" style="color:#fcb42e;"></i> ${p.rating}/5 (${p.reviewsCount} reviews)</div>
-                    <button class="add-to-cart-btn" data-id="${p.id}" style="width:auto; padding:0.8rem 2rem;" ${p.stock <= 0 ? 'disabled' : ''}>
+                    <div style="color:#fcb42e;">${p.category}</div>
+                    <div class="modal-price">${toCedi(p.price)} ${p.originalPrice?`<span style="font-size:1rem;"><strike>GH₵${toCedi(p.originalPrice)}</strike> -${disc}%</span>`:''}</div>
+                    <div style="margin:0.5rem 0;"><i class="fas fa-cubes"></i> Stock: ${p.stock}</div>
+                    <div><i class="fas fa-star" style="color:#fcb42e;"></i> ${p.rating}/5 (${p.reviewsCount})</div>
+                    <button class="add-to-cart-btn" data-id="${p.id}" style="margin-top:0.8rem;" ${p.stock <= 0 ? 'disabled' : ''}>
                         <i class="fas fa-cart-plus"></i> Add to Cart
                     </button>
                 </div>
             </div>
             <div class="review-section">
-                <h3>Customer Reviews</h3>
+                <h3>Reviews</h3>
                 <div class="review-list" id="modalReviewList">${revHtml}</div>
-                <div class="add-review" style="margin-top:1.5rem;">
-                    <h4>Write a Review</h4>
-                    <div style="display:flex; gap:1rem; align-items:center; margin-bottom:1rem;">
-                        <label>Rating:</label>
-                        <select id="newRating" style="padding:0.5rem; border-radius:30px; border:1px solid #ccc;">
-                            <option value="5">5 ★</option><option value="4">4 ★</option><option value="3">3 ★</option><option value="2">2 ★</option><option value="1">1 ★</option>
-                        </select>
-                    </div>
-                    <textarea id="reviewText" rows="3" placeholder="Share your experience with this product..." style="width:100%; padding:1rem; border-radius:20px; border:1px solid #ccc; margin-bottom:1rem;"></textarea>
-                    <input id="reviewAuthor" type="text" placeholder="Your name" value="Customer" style="width:100%; padding:0.8rem; border-radius:40px; border:1px solid #ccc; margin-bottom:1rem;">
-                    <button class="btn-gold" id="submitReview" data-id="${p.id}" style="margin-top:0.5rem;">Submit Review</button>
+                <div class="add-review" style="margin-top:1rem;">
+                    <h4>Add review</h4>
+                    <select id="newRating" style="padding:0.5rem; border-radius:30px; border:1px solid #ccc; width:100%; margin-bottom:0.5rem;">
+                        <option value="5">5 ★</option><option value="4">4 ★</option><option value="3">3 ★</option><option value="2">2 ★</option><option value="1">1 ★</option>
+                    </select>
+                    <textarea id="reviewText" rows="2" placeholder="Write your review..." style="width:100%; padding:0.7rem; border-radius:16px; border:1px solid #ccc; margin-bottom:0.5rem;"></textarea>
+                    <input id="reviewAuthor" type="text" placeholder="Your name" value="Customer" style="width:100%; padding:0.7rem; border-radius:40px; border:1px solid #ccc; margin-bottom:0.5rem;">
+                    <button class="btn-gold" id="submitReview" data-id="${p.id}" style="margin-top:0.3rem;">Submit</button>
                 </div>
             </div>
         `;
 
-        // Add to cart button in modal
         const modalAddBtn = modalContent.querySelector('.add-to-cart-btn');
         if (modalAddBtn) {
             modalAddBtn.addEventListener('click', (e) => {
@@ -1290,9 +1463,8 @@
                 prod.rating = Math.round((all.reduce((acc,r)=>acc+r.rating,0)/all.length)*10)/10;
                 prod.reviewsCount = all.length;
             }
-            // refresh list
             const updated = reviews[pid].map(r=>
-                `<div class="single-review"><span class="review-author">${r.author}</span> <span style="color:#fcb42e; margin-left:8px;"><i class="fas fa-star"></i> ${r.rating}</span><div class="review-text">${r.text}</div><div class="review-date">${r.date}</div></div>`
+                `<div class="single-review"><span class="review-author">${r.author}</span> <span style="color:#fcb42e;"><i class="fas fa-star"></i> ${r.rating}</span><div class="review-text">${r.text}</div><div class="review-date">${r.date}</div></div>`
             ).join('');
             document.getElementById('modalReviewList').innerHTML = updated;
             document.getElementById('reviewText').value = '';
@@ -1310,7 +1482,6 @@
     closeModal.addEventListener('click', ()=> modalOverlay.style.display = 'none');
     modalOverlay.addEventListener('click', (e)=> { if(e.target===modalOverlay) modalOverlay.style.display='none'; });
 
-    // Initialize cart count
     updateCartCount();
     render();
 })();
